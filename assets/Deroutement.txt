@@ -1,0 +1,76 @@
+Deroutement 
+                    //α                                alpha = Rm-Vx
+
+                                                    Xm = Vw*Fb1
+
+                                                    D=XM*Sin (a)
+               Cm =Rm+D
+
+
+
+
+                                                    Ve = Vw*Cos (a)
+
+                                                    Vt = Vw+*Sin (a)
+                vs = VP-Ve
+
+                                                    FB2 = 60/VS
+
+                                                    TAV=Fb2*Dist
+
+                                                    TSV = Fb1 *Dist
+
+                                                    Conso L/min = (conso/h)/60
+                EFUEL = TAV*(conso/min)
+
+Estime(min) = Xm* Sin(a)*TAV 
+
+
+Fb1 = 0.55
+vp = 110kts
+Conso /h = 20L 
+Conso
+
+    Max
+dist  = 999
+rm 360
+vx = 360
+vw= 999
+fob = 999
+
+distance permetttre la virgule 
+tout les champrs entre 0 999 
+
+
+///  Les entreer
+distance = distance
+Rm = route magnetique
+
+Vx = direction du vent
+
+Vw = force(vitesste) du vents
+
+FOB = carburant a bord
+
+
+// les sorties
+
+cm = cape magnétique
+
+VS = vitesse sol
+
+tav = tempas avec vent
+
+Efuel = carburant estimer
+
+A = alpha
+
+Xm la derive maximal 
+
+D = derive
+VE =vent effectif
+Vt = vent traverser
+vp = vitesse propre
+FB1 = facteur de base 1
+FB1 = facteur de base 2
+TSv = temps sans vent 
