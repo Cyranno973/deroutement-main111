@@ -12,7 +12,7 @@ function conversion(distance, rm, vx, vw, fob) {
 
 
 function calcule(objet) {
-    let afficheObjet = new Object();
+     console.log(objet);
     fb1 = 0.55;
     vp = 110;
     alpha = (objet.rm) - (objet.vx);
@@ -53,12 +53,28 @@ function affichage() {
 }
 
 function save() {
-    autoSave=true;
-    sessionStorage.setItem("autoSave", autoSave);
-    sessionStorage.setItem('distance', distance.value);
-    sessionStorage.setItem('rm', rm.value);
-    sessionStorage.setItem('vx', vx.value);
-    sessionStorage.setItem('vw', vw.value);
-    sessionStorage.setItem('fob', fob.value);
+    const autoSaveObject = {
+        autoSave: true,
+        autoSave: autoSave,
+        distance: distance.value,
+        rm: rm.value,
+        vx: vx.value,
+        vw: vw.value,
+        fob: fob.value,
+    }
+    sessionStorage.setItem("autoSaveObject", JSON.stringify(autoSaveObject));
 }
 
+function selectElementContents(el) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+}
+
+function loadData() {
+    const data = JSON.parse(sessionStorage.getItem('autoSaveObject'));
+    // console.log(data);
+    calcule(data);
+}

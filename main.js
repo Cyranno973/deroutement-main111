@@ -35,33 +35,34 @@ let efuel;
  */
 document.addEventListener('DOMContentLoaded', function () {
 
-    if (sessionStorage.getItem("autosave")) {
+    if (sessionStorage.getItem("autoSaveObject")) {
+        console.log('Il y a une sauvegarde');
         loadData();
-      }
-      else{
+    }
+    else {
         console.log('pas de sauvegarde');
-      }
-    calcule(conversion(distance,rm,vx,vw,fob));
-    // read();
+    }
 });
 
 /**
  * Appuie sur la touche entrer
  */
 document.addEventListener('keydown', function (e) {
-    if (e.code === 'Enter') {
+    // let el = document.querySelector(":focus");
 
+    if (e.code === 'Enter') {
+        // el.blur();
         calcule(conversion(distance, rm, vx, vw, fob));
-        // save();
+        save();
     }
 });
 
 /**
- * Quand le focus est endehors de l'input
+ * Quand le focus est en dehors de l'input
  */
 inputs.forEach(element => {
     element.addEventListener('focusout', (event) => {
-        event.target.style.background = 'red';
+        // event.target.style.background = 'red';
         calcule(conversion(distance, rm, vx, vw, fob));
     });
 });
@@ -92,6 +93,13 @@ function degrees_to_radians(degree) {
 
 
 
+
+// document.addEventListener("keydown", function (event) {
+//     let el = document.querySelector(":focus");
+//     if (event.which === 13) {
+//       el.blur();
+//     }
+//   });
 
 
 
