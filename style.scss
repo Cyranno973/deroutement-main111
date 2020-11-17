@@ -67,27 +67,74 @@ overflow: hidden;
       font-weight: 500;
       display: flex;
       text-align: center;
-
-      li{
+      ul{
+       li{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          li{
         display: flex;
         align-items: center;
         justify-content: center;
-
-        input{
-          background-color: #2087C5;
-          outline: none;
-          border-radius: 15px;
-          border: none;
-
-          padding: 15px 20px;
-          width: 90%;
+        li {
+          position: relative;
+          &::after{
+         
+            // color: $base-color1;
+            content: 'Nm';
+            color: white;
+            position: absolute;
+            right: 6px;
+            top: 19px;
+            font-size: 14px;
+          }
+          input{
+            background-color: #2087C5;
+            outline: none;
+            border-radius: 15px;
+            border: none;
+  
+            padding: 15px 20px;
+            width: 100%;
+          }
+          input[type='number'] {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+          }
         }
-        input[type='number'] {
-          text-align: center;
-          color: white;
-          font-size: 18px;
+        
+      } span {
+            position: relative;
+            &::after{
+           
+              // color: $base-color1;
+              content: 'Nm';
+              color: white;
+              position: absolute;
+              right: 6px;
+              top: 19px;
+              font-size: 14px;
+            }
+            input{
+              background-color: #2087C5;
+              outline: none;
+              border-radius: 15px;
+              border: none;
+    
+              padding: 15px 20px;
+              width: 100%;
+            }
+            input[type='number'] {
+              text-align: center;
+              color: white;
+              font-size: 18px;
+            }
+          }
+          
         }
       }
+      
     }
     
     ul{
