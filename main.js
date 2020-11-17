@@ -73,7 +73,6 @@ inputs.forEach(element => {
 
     element.addEventListener('click', function(){
         element.select();
-        
         });
 });
 
@@ -106,11 +105,6 @@ function degrees_to_radians(degree) {
     var pi = Math.PI;
     return degree * (pi / 180);
 }
-
-
-
-
-
 
 
 // document.addEventListener('click', function () {

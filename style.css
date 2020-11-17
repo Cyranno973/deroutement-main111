@@ -117,10 +117,6 @@ body .container-deroutement .container-colonnes li {
   padding: 10px 20px;
 }
 
-body .container-deroutement .container-colonnes li span {
-  color: red;
-}
-
 body .container-deroutement .container-colonnes li label {
   color: #262626;
   text-transform: uppercase;

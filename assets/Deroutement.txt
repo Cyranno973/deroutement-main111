@@ -76,7 +76,6 @@ FB1 = facteur de base 2
 TSv = temps sans vent 
 
 
-if vx >= rm  ou if vx<rm-180
-alpha =1*alpha
-else 
-alpha =(1-*alpha)
+a faire 
+afficher sin cos le t remplacer les input par des div et trnasfomer en pwa l'application
+t = Xm*cosa

@@ -10,8 +10,11 @@ function conversion(distance, rm, vx, vw, fob) {
 
 
 function calcule(objet) {
-    fb1 = 0.55;
+    // fb1 = 0.55;
+    
     vp = 110;
+    fb1 = Math.round(60/vp*100)/100;
+    conso_L_h = 20;
     alpha = (objet.rm) - (objet.vx);
     console.log('vx :'+objet.vx);
     console.log(vx >= rm );
@@ -23,40 +26,46 @@ function calcule(objet) {
         console.log(alpha+"negatif");
     }
     xm = objet.vw * fb1;
-    xm = 8.3;
-    d = xm * Math.round(Math.sin(degrees_to_radians(alpha))*100)/100;
+    // xm = 8.3;
+    d = xm * Math.sin(degrees_to_radians(alpha));
     cm = objet.rm + d;
-    ve = objet.vw * Math.round(Math.cos(degrees_to_radians(alpha))*100)/100;
-    vt = objet.vw * Math.round(Math.sin(degrees_to_radians(alpha))*100)/100;  
+    ve = objet.vw * Math.cos(degrees_to_radians(alpha));
+    vt = objet.vw * Math.sin(degrees_to_radians(alpha));  
     vs = vp - ve;
     fb2 = 60 / vs;
     tav = fb2 * objet.distance;
     tsv = fb1 * objet.distance;
-    conso_L_h = 20;
-    conso_L_min = (conso_L_h) / 60;
+    conso_L_min = (conso_L_h) / 60
     efuel = tav * (conso_L_min);
     save();
     affichage();
 }
 
+function time_convert(num)
+ { 
+  var hours = Math.floor(num / 60);  
+  var minutes = Math.round(num % 60);
+
+   return hours + ":" + minutes;         
+}
+
 function affichage() {
-    document.getElementById('cm').value = cm;
-    document.getElementById('vs').value = vs;
-    document.getElementById('tav').value = tav;
-    document.getElementById('efuel').value = efuel;
+    document.getElementById('cm').value = Math.round(cm);
+    document.getElementById('vs').value = Math.round(vs);
+    document.getElementById('tav').value = time_convert(tav);
+    console.log(time_convert(tav));
+    document.getElementById('efuel').value = Math.round(efuel);
     document.querySelector('.two #alpha span').textContent = alpha;
     document.querySelector('.two #xm span').textContent = xm;
-    document.querySelector('.two #aDistance span').textContent = d;
-    document.querySelector('.two #ve span').textContent = ve;
-    document.querySelector('.two #vt span').textContent = vt;
+    document.querySelector('.two #aDistance span').textContent = Math.round(d*100)/100;
+    document.querySelector('.two #ve span').textContent = Math.round(ve*100)/100;
+    document.querySelector('.two #vt span').textContent = Math.round(vt*100)/100;
     document.querySelector('.two #vp span').textContent = vp;
     document.querySelector('.two #fb1 span').textContent = fb1;
-    document.querySelector('.two #fb2 span').textContent = fb2;
-    document.querySelector('.two #tsv span').textContent = tsv;
-    document.querySelector('.two #conLH span').textContent = conso_L_h;
-    document.querySelector('.two #conLM span').textContent = conso_L_min;
-    document.querySelector('.two #tav span').textContent = tav;
-
+    document.querySelector('.two #fb2 span').textContent = Math.round(fb2*100)/100;
+    document.querySelector('.two #tsv span').textContent =  Math.round(tsv*100)/100;
+    document.querySelector('.two #conLH span').textContent = Math.round(conso_L_h*100)/100;
+    document.querySelector('.two #conLM span').textContent = Math.round(conso_L_min*100)/100;
     console.log('alpha = '+alpha);
 }
 
