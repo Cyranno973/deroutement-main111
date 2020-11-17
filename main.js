@@ -4,10 +4,14 @@ const rm = document.getElementById('rm');
 const vx = document.getElementById('vx');
 const vw = document.getElementById('vw');
 const fob = document.getElementById('fob');
-const inputs = document.querySelectorAll('.div-colonnes-1 ul li input');
-const resultXm = document.getElementById('resultXm');
-const bouton = document.getElementsByTagName('h1')[0];
+const title = document.querySelector('h1');
 
+const inputs = document.querySelectorAll('.div-colonnes-1 ul li input');
+const bouton = document.getElementsByTagName('h1')[0];
+const modal = document.getElementById('myModal');
+const annuler = document.getElementById('annuler');
+const confirmer = document.getElementById('confirmer');
+const closeModal = document.querySelector('.close');
 
 
 ///////////******************  declarations des variables *************//////////////////////////////////
@@ -73,7 +77,30 @@ inputs.forEach(element => {
         });
 });
 
+title.addEventListener('click', function(){
+    modal.style.display = "block";
+})
 
+// When the user clicks on <span> (x), close the modal
+closeModal.addEventListener('click', function() {
+  modal.style.display = "none";
+});
+
+// When the user clicks anywhere outside of the modal, close it
+document.addEventListener('click', function(){
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}); 
+
+confirmer.addEventListener('click', function(){
+    reset();
+    modal.style.display = "none";
+
+})
+annuler.addEventListener('click', function(){
+    modal.style.display = "none";;
+})
 
 function degrees_to_radians(degree) {
     var pi = Math.PI;
@@ -81,7 +108,7 @@ function degrees_to_radians(degree) {
 }
 
 
-bouton.addEventListener('click', reset);
+
 
 
 
@@ -105,3 +132,13 @@ bouton.addEventListener('click', reset);
 //     document.getElementById('test2').textContent = "Sin : "+Math.round(Math.sin(degrees_to_radians(result)));
 //     document.getElementById('test3').textContent = "Cos : "+Math.round(Math.cos(degrees_to_radians(result)));
 // })
+
+
+
+// Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal

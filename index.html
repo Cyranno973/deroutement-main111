@@ -25,23 +25,23 @@
           <ul>
             <li>
               <label for="distance">distance</label>
-              <input value="" maxlength="" type="number" name="distance" id="distance">
+              <input value="" maxlength="" type="number"  min="0" max="999" name="distance" id="distance">
             </li>
             <li>
               <label for="rm">rm</label>
-              <input value="" type="number" name="rm" id="rm">
+              <input value="" type="number" min="0" max="360" name="rm" id="rm">
             </li>
             <li>
               <label for="vx">vx</label>
-              <input value="" type="number" name="vx" id="vx">
+              <input value="" type="number" type="number" min="0" max="360" name="vx" id="vx">
             </li>
             <li>
               <label for="vw">vw</label>
-              <input value="" type="number" name="vw" id="vw">
+              <input value="" type="number" min="0" max="999" name="vw" id="vw">
             </li>
             <li>
               <label for="fob">fob</label>
-              <input value="" type="number" name="fob" id="fob">
+              <input value="" type="number" min="0" max="999" name="fob" id="fob">
             </li>
           </ul>
         </div>
@@ -152,6 +152,19 @@
         </div>
         </div>
       </div>
+    </div>
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Confirmer vous la supression?</p>
+        <div class="container-question">
+          <div id="annuler">Annuler</div>
+          <div id="confirmer">Confirmer</div>
+        </div>
+      </div>
+    
     </div>
     </div>
     <script src="functions.js"></script>
