@@ -1,11 +1,16 @@
-  
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Deroutement</title>
   </head>
@@ -14,168 +19,225 @@
     <div class="container">
       <div class="container-deroutement">
         <h1>Deroutement</h1>
-        <!-- <h2 id="test1"></h2>
-        <h2 id="test2"></h2>
-        <h2 id="test3"></h2>
-        
-        <div id="rm" contenteditable="true">0</div>
-        <div id="vx" contenteditable="true">0</div> -->
         <div class="container-colonnes">
-        <div class="div-colonnes-1">
-          <ul>
-            <li>
-              <label for="distance">distance</label>
-              <span>
-                <input value="" maxlength="" type="number"  min="0" max="999" name="distance" id="distance">
-              </span>
-            </li>
-            <li>
-              <span>
+          <div class="div-colonnes-1">
+            <ul>
+              <li>
+                <label for="distance">distance</label>
+                <span class="">
+                  <input
+                    value=""
+                    maxlength=""
+                    type="number"
+                    min="0"
+                    max="999"
+                    name="distance"
+                    id="distance"
+                  />
+                <span class="units">Nm</span> 
+                </span>
+              </li>
+              <li>
                 <label for="rm">rm</label>
-                <input value="" type="number" min="0" max="360" name="rm" id="rm">
-              </span>
-            </li>
-            <li>
-              <span>
+                  <span>
+                  <input
+                    value=""
+                    type="number"
+                    min="0"
+                    max="360"
+                    name="rm"
+                    id="rm"
+                  />
+                <span class="units-1">°</span> 
+                </span>
+              </li>
+              <li>
                 <label for="vx">vx</label>
-                <input value="" type="number" type="number" min="0" max="360" name="vx" id="vx">
-              </span>
-            </li>
-            <li>
-              <span>
+                  <span>
+                  <input
+                    value=""
+                    type="number"
+                    type="number"
+                    min="0"
+                    max="360"
+                    name="vx"
+                    id="vx"
+                  />
+                <span class="units-1">°</span> 
+                </span>
+              </li>
+              <li>
                 <label for="vw">vw</label>
-                <input value="" type="number" min="0" max="999" name="vw" id="vw">
-              </span>
-            </li>
-            <li>
-              <span>
+                  <span>
+                  <input
+                    value=""
+                    type="number"
+                    min="0"
+                    max="999"
+                    name="vw"
+                    id="vw"
+                  />
+                <span class="units-2">kts</span> 
+                </span>
+              </li>
+              <li>
                 <label for="fob">fob</label>
-                <input value="" type="number" min="0" max="999" name="fob" id="fob">
-              </span>
-            </li>
-          </ul>
-        </div>
-        <div class="div-colonnes-2">
-          <ul>
-            <li>
-              <label for="cm">cm</label>
-              <input readonly value="" type="number"name="cm" id="cm"></li>
-            <li>
-              <label for="vs">vs</label>
-              <input readonly value="" type="number"name="vs" id="vs"></li>
-            <li>
-              <label for="tav">tav</label>
-              <input readonly value="" type="number"name="tav" id="tav"></li>
-            <li>
-              <label for="efuel">efuel</label>
-              <input readonly value="" type="number"name="efuel" id="efuel"></li>
-          </ul>
-        </div>
-        <div class="div-colonnes-3">
-          <div class="one">
-          <ul>
-            
-           <li>
-             <div class="div-text">A</div>
-           </li>
-           <li>
-             <div class="div-text">Xm</div>
-           </li>
-           <li>
-             <div class="div-text">D</div>
-           </li>
-           <li>
-             <div class="div-text">Ve</div>
-           </li>
-           <li>
-             <div class="div-text">Vt</div>
-           </li>
-           <li>
-             <div class="div-text">Vp</div>
-           </li>
-           <li>
-             <div class="div-text">FB1</div>
-           </li>
-           <li>
-             <div class="div-text">FB2</div>
-           </li>
-           <li>
-             <div class="div-text">TSV</div>
-           </li>
-           <li>
-             <div class="div-text">Conso L/h</div>
-           </li>
-           <li>
-             <div class="div-text">Conso L/min</div>
-           </li>
-           <li>
-             <div class="div-text">TSV</div>
-           </li>
-          </ul>
-
+                  <span>
+                  <input
+                    value=""
+                    type="number"
+                    min="0"
+                    max="999"
+                    name="fob"
+                    id="fob"
+                  />
+                <span class="units-2">L</span> 
+                </span>
+              </li>
+            </ul>
           </div>
-          <div class="two">
-          <ul>
-            <li>
-              <div id="alpha"  class="div-text"><span>000</span><span>°</span> </div>
-            </li>
-            <li>
-              <div id="xm" class="div-text"><span>000</span><span>°</span> </div>
-            </li>
-            <li>
-              <div id="distance" class="div-text"><span>000</span><span>°</span> </div>
-            </li>
-            <li>
-              <div id="ve" class="div-text"><span>00</span><span> kts</span> </div>
-            </li>
-            <li>
-              <div id="vt" class="div-text"><span>00</span><span> kts</span> </div>
-            </li>
-            <li>
-              <div id="vp" class="div-text"><span>00</span><span> kts</span> </div>
-            </li>
-            
-            <li>
-              <div id="fb1" class="div-text"><span>00</span></div>
-            </li>
-            <li>
-              <div id="fb2" class="div-text"><span>00</span></div>
-            </li>
-            <li>
-              <div id="tsv" class="div-text"><span>0:00</span><span> min</span> </div>
-
-            </li>
-            <li>
-              <div id="conLH" class="div-text"><span>00</span><span> L</span> </div>
-
-            </li>
-            <li>
-              <div id="conLM" class="div-text"><span>0,33</span><span> L</span> </div>
-            </li>
-            <li>
-              <div id="tav" class="div-text"><span>0:00</span><span>min</span> </div>
-            </li>
-             
-           
-          </ul>
+          <div class="div-colonnes-2">
+            <ul>
+              <li>
+                <label for="cm">cm</label>
+                <input readonly value="" type="number" name="cm" id="cm" />
+              </li>
+              <li>
+                <label for="vs">vs</label>
+                <input readonly value="" type="number" name="vs" id="vs" />
+              </li>
+              <li>
+                <label for="tav">tav</label>
+                <input readonly value="" type="number" name="tav" id="tav" />
+              </li>
+              <li>
+                <label for="efuel">efuel</label>
+                <input
+                  readonly
+                  value=""
+                  type="number"
+                  name="efuel"
+                  id="efuel"
+                />
+              </li>
+            </ul>
           </div>
-        </div>
+          <div class="div-colonnes-3">
+            <div class="one">
+              <ul>
+                <li>
+                  <div class="div-text">A</div>
+                </li>
+                <li>
+                  <div class="div-text">Xm</div>
+                </li>
+                <li>
+                  <div class="div-text">D</div>
+                </li>
+                <li>
+                  <div class="div-text">Ve</div>
+                </li>
+                <li>
+                  <div class="div-text">Vt</div>
+                </li>
+                <li>
+                  <div class="div-text">Vp</div>
+                </li>
+                <li>
+                  <div class="div-text">FB1</div>
+                </li>
+                <li>
+                  <div class="div-text">FB2</div>
+                </li>
+                <li>
+                  <div class="div-text">TSV</div>
+                </li>
+                <li>
+                  <div class="div-text">Conso L/h</div>
+                </li>
+                <li>
+                  <div class="div-text">Conso L/min</div>
+                </li>
+                <li>
+                  <div class="div-text">TSV</div>
+                </li>
+              </ul>
+            </div>
+            <div class="two">
+              <ul>
+                <li>
+                  <div id="alpha" class="div-text">
+                    <span>000</span><span>°</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="xm" class="div-text">
+                    <span>000</span><span>°</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="aDistance" class="div-text">
+                    <span>000</span><span>°</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="ve" class="div-text">
+                    <span>00</span><span> kts</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="vt" class="div-text">
+                    <span>00</span><span> kts</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="vp" class="div-text">
+                    <span>00</span><span> kts</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div id="fb1" class="div-text"><span>00</span></div>
+                </li>
+                <li>
+                  <div id="fb2" class="div-text"><span>00</span></div>
+                </li>
+                <li>
+                  <div id="tsv" class="div-text">
+                    <span>0:00</span><span> min</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="conLH" class="div-text">
+                    <span>00</span><span> L</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="conLM" class="div-text">
+                    <span>0,33</span><span> L</span>
+                  </div>
+                </li>
+                <li>
+                  <div id="tav" class="div-text">
+                    <span>0:00</span><span>min</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Confirmer vous la supression?</p>
-        <div class="container-question">
-          <div id="annuler">Annuler</div>
-          <div id="confirmer">Confirmer</div>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Confirmer vous la supression?</p>
+          <div class="container-question">
+            <div id="annuler">Annuler</div>
+            <div id="confirmer">Confirmer</div>
+          </div>
         </div>
       </div>
-    
-    </div>
     </div>
     <script src="functions.js"></script>
     <script src="main.js"></script>

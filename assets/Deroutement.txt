@@ -74,3 +74,9 @@ vp = vitesse propre
 FB1 = facteur de base 1
 FB1 = facteur de base 2
 TSv = temps sans vent 
+
+
+if vx >= rm  ou if vx<rm-180
+alpha =1*alpha
+else 
+alpha =(1-*alpha)

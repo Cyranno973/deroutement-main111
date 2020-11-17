@@ -1,5 +1,4 @@
 function conversion(distance, rm, vx, vw, fob) {
-
     let monObjet = new Object();
     monObjet.distance = Number(distance.value);
     monObjet.rm = Number(rm.value);
@@ -10,16 +9,25 @@ function conversion(distance, rm, vx, vw, fob) {
 }
 
 
-
 function calcule(objet) {
     fb1 = 0.55;
     vp = 110;
     alpha = (objet.rm) - (objet.vx);
+    console.log('vx :'+objet.vx);
+    console.log(vx >= rm );
+    if (vx >= objet.rm || vx < (objet.rm-180)) {
+        alpha = alpha * 1;
+        console.log(alpha+"positif");
+    } else {
+        alpha = alpha * (-1);
+        console.log(alpha+"negatif");
+    }
     xm = objet.vw * fb1;
-    d = xm * Math.sin(alpha);
+    xm = 8.3;
+    d = xm * Math.round(Math.sin(degrees_to_radians(alpha))*100)/100;
     cm = objet.rm + d;
-    ve = objet.vw * Math.cos(alpha);
-    vt = objet.vw * Math.sin(alpha);  //const vt = vw+*sin(alpha)
+    ve = objet.vw * Math.round(Math.cos(degrees_to_radians(alpha))*100)/100;
+    vt = objet.vw * Math.round(Math.sin(degrees_to_radians(alpha))*100)/100;  
     vs = vp - ve;
     fb2 = 60 / vs;
     tav = fb2 * objet.distance;
@@ -27,7 +35,6 @@ function calcule(objet) {
     conso_L_h = 20;
     conso_L_min = (conso_L_h) / 60;
     efuel = tav * (conso_L_min);
-
     save();
     affichage();
 }
@@ -37,20 +44,20 @@ function affichage() {
     document.getElementById('vs').value = vs;
     document.getElementById('tav').value = tav;
     document.getElementById('efuel').value = efuel;
-    document.querySelector('.two span').textContent = alpha;
-    document.querySelector('.two span').textContent = xm;
-    document.querySelector('.two span').textContent = distance;
-    document.querySelector('.two span').textContent = ve;
-    document.querySelector('.two span').textContent = vt;
-    document.querySelector('.two span').textContent = vp;
-    document.querySelector('.two span').textContent = fb1;
-    document.querySelector('.two span').textContent = fb2;
-    document.querySelector('.two span').textContent = tsv;
-    document.querySelector('.two span').textContent = conso_L_h;
-    document.querySelector('.two span').textContent = conso_L_min;
-    document.querySelector('.two span').textContent = tav;
+    document.querySelector('.two #alpha span').textContent = alpha;
+    document.querySelector('.two #xm span').textContent = xm;
+    document.querySelector('.two #aDistance span').textContent = d;
+    document.querySelector('.two #ve span').textContent = ve;
+    document.querySelector('.two #vt span').textContent = vt;
+    document.querySelector('.two #vp span').textContent = vp;
+    document.querySelector('.two #fb1 span').textContent = fb1;
+    document.querySelector('.two #fb2 span').textContent = fb2;
+    document.querySelector('.two #tsv span').textContent = tsv;
+    document.querySelector('.two #conLH span').textContent = conso_L_h;
+    document.querySelector('.two #conLM span').textContent = conso_L_min;
+    document.querySelector('.two #tav span').textContent = tav;
 
-    console.log(alpha);
+    console.log('alpha = '+alpha);
 }
 
 function save() {
@@ -66,13 +73,7 @@ function save() {
     sessionStorage.setItem("autoSaveObject", JSON.stringify(autoSaveObject));
 }
 
-function selectElementContents(el) {
-    var range = document.createRange();
-    range.selectNodeContents(el);
-    var sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-}
+
 
 function loadData() {
     const data = JSON.parse(sessionStorage.getItem('autoSaveObject'));
