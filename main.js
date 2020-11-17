@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
  * Appuie sur la touche entrer
  */
 document.addEventListener('keydown', function (e) {
-    // let el = document.querySelector(":focus");
+    let el = document.querySelector(":focus");
 
     if (e.code === 'Enter') {
-        // el.blur();
+        el.blur();
         calcule(conversion(distance, rm, vx, vw, fob));
         save();
     }
@@ -65,24 +65,12 @@ inputs.forEach(element => {
         // event.target.style.background = 'red';
         calcule(conversion(distance, rm, vx, vw, fob));
     });
+
+    element.addEventListener('click', function(){
+        element.select();
+        
+        });
 });
-
-
-
-function read() {
-    // distance.value= sessionStorage.getItem('distance');
-}
-
-// document.addEventListener('keydown', function(e){
-//     if (e.code === 'Enter') {
-//  alpha = degrees_to_radians(alpha);
-//  console.log(alpha);
-
-//         save();
-// resultXm.innerText = xm;
-//     }
-// });
-
 
 
 
@@ -90,24 +78,6 @@ function degrees_to_radians(degree) {
     var pi = Math.PI;
     return degree * (pi / 180);
 }
-
-
-
-
-// document.addEventListener("keydown", function (event) {
-//     let el = document.querySelector(":focus");
-//     if (event.which === 13) {
-//       el.blur();
-//     }
-//   });
-
-
-
-
-
-
-
-
 
 
 

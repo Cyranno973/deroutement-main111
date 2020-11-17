@@ -12,7 +12,6 @@ function conversion(distance, rm, vx, vw, fob) {
 
 
 function calcule(objet) {
-     console.log(objet);
     fb1 = 0.55;
     vp = 110;
     alpha = (objet.rm) - (objet.vx);
@@ -75,6 +74,13 @@ function selectElementContents(el) {
 
 function loadData() {
     const data = JSON.parse(sessionStorage.getItem('autoSaveObject'));
-    // console.log(data);
-    calcule(data);
+
+    const dataObjet = {  
+    distance: document.getElementById('distance').value = Number(data.distance),
+    rm: document.getElementById('rm').value = Number(data.rm),
+    vx: document.getElementById('vx').value = Number(data.vx),
+    vw: document.getElementById('vw').value = Number(data.vw),
+    fob: document.getElementById('fob').value = Number(data.fob),
+    }
+    calcule(dataObjet)
 }
