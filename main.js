@@ -6,6 +6,7 @@ const vw = document.getElementById('vw');
 const fob = document.getElementById('fob');
 const inputs = document.querySelectorAll('.div-colonnes-1 ul li input');
 const resultXm = document.getElementById('resultXm');
+const bouton = document.getElementsByTagName('h1')[0];
 
 
 
@@ -80,6 +81,7 @@ function degrees_to_radians(degree) {
 }
 
 
+bouton.addEventListener('click', reset);
 
 
 

@@ -37,18 +37,20 @@ function affichage() {
     document.getElementById('vs').value = vs;
     document.getElementById('tav').value = tav;
     document.getElementById('efuel').value = efuel;
-    document.getElementById('alpha').textContent = alpha;
-    document.getElementById('xm').textContent = xm;
-    document.getElementById('distance').textContent = distance;
-    document.getElementById('ve').textContent = ve;
-    document.getElementById('vt').textContent = vt;
-    document.getElementById('vp').textContent = vp;
-    document.getElementById('fb1').textContent = fb1;
-    document.getElementById('fb2').textContent = fb2;
-    document.getElementById('tsv').textContent = tsv;
-    document.getElementById('conLH').textContent = conso_L_h;
-    document.getElementById('conLM').textContent = conso_L_min;
-    document.getElementById('tav').textContent = tav;
+    document.querySelector('.two span').textContent = alpha;
+    document.querySelector('.two span').textContent = xm;
+    document.querySelector('.two span').textContent = distance;
+    document.querySelector('.two span').textContent = ve;
+    document.querySelector('.two span').textContent = vt;
+    document.querySelector('.two span').textContent = vp;
+    document.querySelector('.two span').textContent = fb1;
+    document.querySelector('.two span').textContent = fb2;
+    document.querySelector('.two span').textContent = tsv;
+    document.querySelector('.two span').textContent = conso_L_h;
+    document.querySelector('.two span').textContent = conso_L_min;
+    document.querySelector('.two span').textContent = tav;
+
+    console.log(alpha);
 }
 
 function save() {
@@ -83,4 +85,19 @@ function loadData() {
     fob: document.getElementById('fob').value = Number(data.fob),
     }
     calcule(dataObjet)
+}
+
+function reset(){
+    const allInputs = document.querySelectorAll('.container-colonnes ul input');
+    const allSpan = document.querySelectorAll('.two ul li div span');
+
+    allInputs.forEach(input => {
+        input.value = "";
+    });
+
+    allSpan.forEach(span => {
+        span.innerHTML = "";
+    });
+
+    sessionStorage.removeItem("autoSaveObject");
 }
