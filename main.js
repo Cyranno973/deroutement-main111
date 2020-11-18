@@ -16,6 +16,9 @@ const closeModal = document.querySelector('.close');
 
 ///////////******************  declarations des variables *************//////////////////////////////////
 let autoSave = false;
+let sin;
+let cos;
+let temps;
 let alpha;
 let xm;
 let d;

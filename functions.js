@@ -10,23 +10,17 @@ function conversion(distance, rm, vx, vw, fob) {
 
 
 function calcule(objet) {
-    // fb1 = 0.55;
-    
     vp = 110;
     fb1 = Math.round(60/vp*100)/100;
     conso_L_h = 20;
+ 
     alpha = (objet.rm) - (objet.vx);
-    console.log('vx :'+objet.vx);
-    console.log(vx >= rm );
     if (vx >= objet.rm || vx < (objet.rm-180)) {
         alpha = alpha * 1;
-        console.log(alpha+"positif");
     } else {
         alpha = alpha * (-1);
-        console.log(alpha+"negatif");
     }
     xm = objet.vw * fb1;
-    // xm = 8.3;
     d = xm * Math.sin(degrees_to_radians(alpha));
     cm = objet.rm + d;
     ve = objet.vw * Math.cos(degrees_to_radians(alpha));
@@ -35,26 +29,29 @@ function calcule(objet) {
     fb2 = 60 / vs;
     tav = fb2 * objet.distance;
     tsv = fb1 * objet.distance;
-    conso_L_min = (conso_L_h) / 60
+    conso_L_min = (conso_L_h) / 60;
     efuel = tav * (conso_L_min);
+    temps = xm*Math.cos(alpha);
+    sin = Math.sin(degrees_to_radians(alpha));
+    cos = Math.cos(degrees_to_radians(alpha));
     save();
     affichage();
 }
 
 function time_convert(num)
- { 
-  var hours = Math.floor(num / 60);  
-  var minutes = Math.round(num % 60);
-
-   return hours + ":" + minutes;         
+{ 
+    let hours = Math.floor(num / 60);  
+    let minutes = Math.round(num % 60);
+    return hours + " h " + minutes+" min";         
 }
 
 function affichage() {
-    document.getElementById('cm').value = Math.round(cm);
-    document.getElementById('vs').value = Math.round(vs);
-    document.getElementById('tav').value = time_convert(tav);
-    console.log(time_convert(tav));
-    document.getElementById('efuel').value = Math.round(efuel);
+    document.getElementById('sin').textContent = Math.round(sin*100)/100;
+    document.getElementById('cos').textContent = Math.round(cos*100)/100;
+    document.getElementById('cm').textContent = Math.round(cm)+' °';
+    document.getElementById('vs').textContent = Math.round(vs)+' kts';
+    document.getElementById('tav').textContent = time_convert(tav);
+    document.getElementById('efuel').textContent = Math.round(efuel)+' L';
     document.querySelector('.two #alpha span').textContent = alpha;
     document.querySelector('.two #xm span').textContent = xm;
     document.querySelector('.two #aDistance span').textContent = Math.round(d*100)/100;
@@ -66,7 +63,8 @@ function affichage() {
     document.querySelector('.two #tsv span').textContent =  Math.round(tsv*100)/100;
     document.querySelector('.two #conLH span').textContent = Math.round(conso_L_h*100)/100;
     document.querySelector('.two #conLM span').textContent = Math.round(conso_L_min*100)/100;
-    console.log('alpha = '+alpha);
+    document.getElementById('temps').textContent = Math.round(temps*100)/100;
+
 }
 
 function save() {
@@ -86,7 +84,7 @@ function save() {
 
 function loadData() {
     const data = JSON.parse(sessionStorage.getItem('autoSaveObject'));
-
+    
     const dataObjet = {  
     distance: document.getElementById('distance').value = Number(data.distance),
     rm: document.getElementById('rm').value = Number(data.rm),
@@ -100,12 +98,18 @@ function loadData() {
 function reset(){
     const allInputs = document.querySelectorAll('.container-colonnes ul input');
     const allSpan = document.querySelectorAll('.two ul li div span');
+    const allSpan2 = document.querySelectorAll('.div-colonnes-2 ul li div span');
+console.log(allSpan);
+console.log(allSpan2);
 
     allInputs.forEach(input => {
         input.value = "";
     });
 
     allSpan.forEach(span => {
+        span.innerHTML = "";
+    });
+    allSpan2.forEach(span => {
         span.innerHTML = "";
     });
 

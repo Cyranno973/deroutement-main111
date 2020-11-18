@@ -92,10 +92,6 @@ $base-color6: #63b6e9;
           list-style: none;
           padding: 10px 20px;
 
-          // span{
-          //   color: red;
-          // }
-
           label{
             color: $base-color2;
             text-transform: uppercase;
@@ -135,17 +131,35 @@ $base-color6: #63b6e9;
       margin-top: 45px;
       text-align: center;
       li{
-        input[type='number'] {
-           outline: none;
-          border-radius: 15px;
-          padding: 10px 5px;
-          width: 60%;
-          text-align: center;
-          // color: #121849;
-          color: #fff;
-          font-size: 18px;
-          font-weight: bold;
-          background-color: #303c97;
+        #container-cm,#container-vs,#container-tav,#container-efuel{
+          p{
+            color: $base-color2;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px 2px;
+            font-weight: 600;
+          
+          }
+          div{
+            display: flex;
+            justify-content: center;
+            border-radius: 15px;
+            padding: 10px 4px;
+            width: 160px;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #303c97;
+            
+            span{
+              padding: 1px;
+              &:nth-child(2){
+                font-size: 12px;
+              }
+            }
+          }
         }
       }
     }
